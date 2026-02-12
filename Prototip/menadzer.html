@@ -1,0 +1,104 @@
+<!--Autor: Marija Aleksic 2020/0538-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mark Reservations</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 30px;
+		}
+
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+			width: 80%;
+			background-color: #fff;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		}
+
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #009688;
+			color: #fff;
+		}
+
+		td button {
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+			font-size: 18px;
+			color: #009688;
+		}
+
+		td button.check {
+			color: #4CAF50;
+		}
+
+		td button:hover {
+			color: #005e54;
+		}
+
+		tr.marked {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>Mark Reservations</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Last Name</th>
+				<th>Date</th>
+				<th>Time</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Milica</td>
+				<td>Banjac</td>
+				<td>March 20, 2023</td>
+				<td>10:00 AM</td>
+				<td><button class="check" onclick="markChecked(this)">&#10004;</button><button onclick="removeRow(this)">X</button></td>
+			</tr>
+			<tr>
+				<td>Natalija</td>
+				<td>Bogdanovic</td>
+				<td>March 21, 2023</td>
+				<td>2:00 PM</td>
+				<td><button class="check" onclick="markChecked(this)">&#10004;</button><button onclick="removeRow(this)">X</button></td>
+			</tr>
+			<tr>
+				<td>Pavle</td>
+				<td>Perovic</td>
+				<td>March 22, 2023</td>
+				<td>11:30 AM</td>
+				<td><button class="check" onclick="markChecked(this)">&#10004;</button><button onclick="removeRow(this)">X</button></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script>
+		function markChecked(button) {
+			button.parentNode.parentNode.classList.add('marked');
+		}
+
+		function removeRow(button) {
+			button.parentNode.parentNode.remove();
+		}
+	</script>
+</body>
+</html>

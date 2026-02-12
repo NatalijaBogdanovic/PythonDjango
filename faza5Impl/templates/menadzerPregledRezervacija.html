@@ -1,0 +1,128 @@
+<!--Autor: Marija Aleksic 2020/0538, Pavle Perovic 0594/2014-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 30px;
+		}
+
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+			width: 80%;
+			background-color: #fff;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		}
+
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #408aeb;
+			color: #fff;
+		}
+
+		td button {
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+			font-size: 18px;
+			color: #408aeb;
+		}
+
+		td button.check {
+			color: #408aeb;
+		}
+
+		td button:hover {
+			color: #408aeb;
+		}
+
+		tr.marked {
+			display: none;
+		}
+
+		.logout-button {
+			display: block;
+			margin: 20px auto;
+			width: 80%;
+			max-width: 600px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			background-color: #408aeb;
+			color: #fff;
+			font-size: 16px;
+			text-align: center;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>Iznajmljivanja</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Last Name</th>
+                <th>Date and time</th>
+				<th>Mark</th>
+			</tr>
+		</thead>
+        <tbody>
+            {% for izn in iznajmljivanja %}
+              <tr>
+                <td>{{ izn.getUserName }}</td>
+                <td>{{ izn.getUserLastName }}</td>
+                <td>{{ izn.datumpocetka }}</td>
+                <td>
+                  <a href="{% url 'markirajPozitivnoI' izn.idrreg izn.idizn %}"><button class="check" onclick="removeRow(this)">&#10004;</button></a> <a href="{% url 'markirajNegativnoI' izn.idrreg izn.idizn %}"><button onclick="removeRow(this)">X</button></a>
+                </td>
+              </tr>
+            {% endfor %}
+        </tbody>
+	</table>
+    <h1>Rezervacije</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Last Name</th>
+                <th>Date and time</th>
+				<th>Mark</th>
+			</tr>
+		</thead>
+        <tbody>
+            {% for rez in rezervacije %}
+              <tr>
+                <td>{{ rez.getUserName }}</td>
+                <td>{{ rez.getUserLastName }}</td>
+                <td>{{ rez.datumpocetka }}</td>
+                <td>
+                  <a href="{% url 'markirajPozitivnoR' rez.idrreg rez.idrez %}"><button class="check" onclick="removeRow(this)">&#10004;</button></a> <a href="{% url 'markirajNegativnoR' rez.idrreg rez.idrez %}"><button onclick="removeRow(this)">X</button></a>
+                </td>
+              </tr>
+            {% endfor %}
+        </tbody>
+	</table>
+	<a href="{% url 'logout' %}" class="logout-button">Log out</a>
+
+	<script>
+		function removeRow(button) {
+			button.parentNode.parentNode.remove();
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!--Milica Banjac-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Name - Description</title>
+  <style>
+    /* CSS styles for the page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .restaurant-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border: 5px solid #ddd;
+      box-sizing: border-box;
+    }
+    .restaurant-name {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .restaurant-description {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .rating {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        direction: rtl;
+    }
+    .rating input[type="radio"] {
+      display: none;
+    }
+    .rating input[type="radio"] + label {
+      font-size: 24px;
+      color: #ddd;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .rating label:hover ~ label {
+    color: gold;
+}
+    .rating input[type="radio"]:checked ~ label {
+    color: gold;
+}
+    .average-rating {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .button {
+      background-color: purple;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: purple;
+    }
+
+    .image-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center ;
+        width: 100%;
+    }
+    .image-wrapper img{
+        max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="restaurant-image" src="{% static objekat.getSlikaOpisa %}" alt="Image">
+    <h1 class="restaurant-name">{{ objekat.naziv}}</h1>
+    <p class="restaurant-description">{{ objekat.opis}}</p>
+      <h1 class="restaurant-menu">Menu</h1>
+      <img class="restaurant-image" src="{% static objekat.getSlikaMenija %}" alt="Image">
+      <form id="oceni-form" method="POST" action="{% url 'oceni_objekat' objekat.idobj %}">
+        {% csrf_token %}
+          <div class="rating">
+              <input type="radio" name="rating" id="rating-5" value="5">
+              <label for="rating-5">&#9733;</label>
+              <input type="radio" name="rating" id="rating-4" value="4">
+              <label for="rating-4">&#9733;</label>
+              <input type="radio" name="rating" id="rating-3" value="3">
+              <label for="rating-3">&#9733;</label>
+              <input type="radio" name="rating" id="rating-2" value="2">
+              <label for="rating-2">&#9733;</label>
+              <input type="radio" name="rating" id="rating-1" value="1">
+              <label for="rating-1">&#9733;</label>
+          </div>
+      <div style="display:flex; justify-content:center; align-items:center;">
+            <span class="average-rating">
+                {% if objekat.brocena > 0 %}
+                    Average Rating:{{ objekat.srednja_ocena }}
+            {% else %}
+                    Average Rating: 0.0
+                {% endif %}
+            </span>
+        </div>
+  </form>
+          <input type="hidden" name="rating" id="hidden-rating" value="">
+        <script>
+              const ratingInputs = document.querySelectorAll('input[name="rating"]');
+                ratingInputs.forEach(input => {
+                    input.addEventListener('click', function() {
+                    document.getElementById('hidden-rating').value = this.value;
+                    document.getElementById('oceni-form').submit();
+                  });
+                });
+   </script>
+        <div class="buttons">
+        <a href="{% url 'reserveTable' objekat.idobj %}"><button class="button">Reserve table</button></a>
+        <form method="post" action="{% url 'reservePlace' objekat.idobj %}">
+              {% csrf_token %}
+              <div class="form-group">
+                  <button class="button" type="submit">Reserve the whole place</button>
+              </div>
+        </form>
+        <form method="post" action="{% url 'add_favorites'  objekat.idobj %}">
+              {% csrf_token %}
+              <div class="form-group">
+                <button class="button" type="submit">Add to favorites</button>
+              </div>
+            </form>
+            <form method="post" action="{% url 'delete_favorites'  objekat.idobj %}">
+              {% csrf_token %}
+              <div class="form-group">
+                <button class="button" type="submit">Delete from favorites</button>
+              </div>
+            </form>
+        </div>
+  </div>
+</body>
+</html>

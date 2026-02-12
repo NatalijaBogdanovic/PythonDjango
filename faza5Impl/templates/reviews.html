@@ -1,0 +1,112 @@
+<!--Natalija Bogdanovic-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Explore Page</title>
+    <style>
+      body{
+          font-family: Arial, sans-serif;
+          background-color: #f2f2f2;
+      }
+      h1{
+          text-align: center;
+          font-size: 36px;
+          margin-top: 50px;
+      }
+      .button-container{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 50px;
+      }
+      .button{
+          padding: 10px 20px;
+          border-radius: 20px;
+          background-color: #4CAF50;
+          color: white;
+          font-size: 16px;
+          margin: 10px;
+          text-decoration: none;
+          text-align: center;
+      }
+      .button-blue{
+        padding: 10px 20px;
+          border-radius: 20px;
+          background-color: blue;
+          color: white;
+          font-size: 16px;
+          margin: 10px;
+          text-decoration: none;
+          text-align: center;
+      }
+      .button-red{
+        padding: 10px 20px;
+          border-radius: 20px;
+          background-color: palevioletred;
+          color: white;
+          font-size: 16px;
+          margin: 10px;
+          text-decoration: none;
+          text-align: center;
+      }
+      .container{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 50px;
+      }
+      .card{
+          width: 300px;
+          margin: 20px;
+          background-color: white;
+          box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+          text-align: center;
+          padding: 20px;
+      }
+      .card img{
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          margin-bottom: 20px;
+      }
+      .card h2{
+          font-size: 24px;
+          margin-bottom: 10px;
+      }
+      .card p{
+          font-size: 16px;
+          margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Based on popularity</h1>
+    <div class="button-container">
+        <a class="button" href="{% url 'pubs' %}">Pubs</a>
+        <a class="button" href="{% url 'restaurants' %}">Restaurants</a>
+        <a class="button" href="{% url 'clubs' %}">Clubs</a>
+        <a class="button button-blue" href="{% url 'belgrade' %}">Belgrade</a>
+        <a class="button button-blue" href="{% url 'nis' %}">Niš</a>
+        <a class="button button-blue" href="{% url 'noviSad' %}">Novi Sad</a>
+        <a class="button button-red" href="{% url 'reviews' %}">Based on popularity</a>
+        <a class="button button-red" href="{% url 'prikaziSortiranExplore' %}">Based on ratings</a>
+
+    </div>
+    <div class="container">
+        {% for rez in rezervacije %}
+        <div class="card">
+            {% if rez.dohvObjekat %}
+            <img src="{% static rez.dohvObjekat %}" alt="City Garden">
+            {% endif %}
+            <h2>{{ rez.dohvImeObjekta }}</h2>
+            <p>{{ rez.dohvAdresuObjekta }}</p>
+            <form method="post" action="{% url 'prikaziStranicuObjekta' rez.idobj %}">
+               {% csrf_token %}
+                <button type="submit" class=button name="stranicaObjekta">See More</button>
+            </form>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+  </body>

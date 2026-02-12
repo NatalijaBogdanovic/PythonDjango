@@ -1,0 +1,98 @@
+<!--Autor: Marija Aleksic 2020/0538-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Page</title>
+	<style>
+		/* CSS code for styling the page */
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			text-align: center;
+		}
+        .restaurant-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border: 5px solid #ddd;
+      box-sizing: border-box;
+    }
+		.img-wrapper {
+			margin: 20px 0;
+		}
+		.form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 20px 0;
+		}
+		.form select {
+			margin: 10px 0;
+		}
+		.btn {
+			padding: 10px 20px;
+			background-color: #3498db;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		.btn:hover {
+			background-color: #2980b9;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="img-wrapper">
+			<!-- This is where your image will be inserted -->
+            <img class="restaurant-image" src="stolovi.png" alt="Restaurant Image">
+		</div>
+		<form class="form">
+			<label for="date">Select date:</label>
+			<input type="date" id="date" name="date">
+			<label for="time">Select time:</label>
+			<input type="time" id="time" name="time">
+			<label for="option">Select an option:</label>
+			<select id="option" name="option">
+				<option value="option1">Option 1</option>
+				<option value="option2">Option 2</option>
+				<option value="option3">Option 3</option>
+                <option value="option1">Option 4</option>
+				<option value="option2">Option 5</option>
+				<option value="option3">Option 6</option>
+                <option value="option1">Option 7</option>
+				<option value="option2">Option 8</option>
+				<option value="option3">Option 9</option>
+                <option value="option1">Option 10</option>
+				<option value="option2">Option 11</option>
+				<option value="option3">Option 12</option>
+                <option value="option1">Option 13</option>
+				<option value="option2">Option 14</option>
+				<option value="option3">Option 15</option>
+                <option value="option1">Option 16</option>
+				<option value="option2">Option 17</option>
+				<option value="option3">Option 18</option>
+                <option value="option1">Option 19</option>
+				<option value="option2">Option 20</option>
+				<option value="option3">Option 21</option>
+                <option value="option1">Option 22</option>
+				<option value="option2">Option 23</option>
+				<option value="option3">Option 24</option>
+                <option value="option1">Option 25</option>
+				<option value="option2">Option 26</option>
+				<option value="option3">Option 27</option>
+                <option value="option1">Option 28</option>
+				<option value="option2">Option 29</option>
+				<option value="option3">Option 30</option>
+                <option value="option1">Option 31</option>
+				<option value="option2">Option 32</option>
+				<option value="option3">Option 33</option>
+			</select>
+			<button type="submit" class="btn">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

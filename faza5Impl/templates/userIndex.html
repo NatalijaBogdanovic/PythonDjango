@@ -1,0 +1,97 @@
+<!-- AUTOR PAVLE PEROVIC-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TableMate - Dobro došli na TableMate aplikaciju</title>
+    <style>
+      body {
+        background-image: url("{% static 'slike/AdobeStock_152133987.jpeg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      h1 {
+        text-align: center;
+        font-size: 48px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px #000000;
+        margin-bottom: 50px;
+      }
+      
+      button {
+        font-size: 20px;
+        font-weight: lighter;
+        color: white;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button.explore {
+        background-color: #408aeb;
+        color: white;
+      }
+
+      button.news {
+        background-color: transparent;
+        color: white;
+      }
+
+      button.favorites {
+        background-color: #408aeb;
+        color: white;
+      }
+
+      button.user-profile {
+        background-color: transparent;
+        color: white;
+      }
+
+      button.logout {
+        background-color: transparent;
+        color: white;
+        width: 630px;
+      }
+
+      button:hover {
+        background-color: white;
+        color: #408aeb;
+      }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>Dobro dosli na Table<span style="color: #408aeb;">Mate</span> aplikaciju</h1>
+<div>
+    <a href="{% url 'prikaziExplore' %}"><button class="explore">Explore</button></a>
+            <a href="{% url 'prikazVesti' %}"><button class="news">Prikazi vesti</button></a>
+    <a href="{% url 'prikaziOmiljene' %}"><button class="favorites">Favorites</button></a>
+        <a href="{% url 'prikazProfila' %}"><button class="user-profile">User profile</button></a>
+<br>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="logout">Logout</button>
+</form>
+</div>
+</div>
+</body>
+</html>
+
+

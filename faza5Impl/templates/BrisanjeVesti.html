@@ -1,0 +1,85 @@
+<!--Autor: Marija Aleksic 2020/0538, Pavle Perovic 0594/2014-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 30px;
+		}
+
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+			width: 80%;
+			background-color: #fff;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		}
+
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #408aeb;
+			color: #fff;
+		}
+
+		td button {
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+			font-size: 18px;
+			color: #408aeb;
+		}
+
+		td button.check {
+			color: #408aeb;
+		}
+
+		td button:hover {
+			color: #408aeb;
+		}
+
+		tr.marked {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>Korisnici</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Naslov</th>
+			</tr>
+		</thead>
+        <tbody>
+            {% for vest in vesti %}
+              <tr>
+                <td>{{ vest.naslov }}</td>
+                <td>
+                  <form method="post" action="{% url 'obrisiVest' vest.idvest %}">
+                    {% csrf_token %}
+                        <button type="submit" name="obrisiKorisnika">Obrisi vest</button>
+                  </form>
+                </td>
+              </tr>
+            {% endfor %}
+        </tbody>
+	</table>
+	<script>
+		function removeRow(button) {
+			button.parentNode.parentNode.remove();
+		}
+	</script>
+</body>
+</html>

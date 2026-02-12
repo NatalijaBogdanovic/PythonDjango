@@ -1,0 +1,68 @@
+<!--Natalija Bogdanovic-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Page</title>
+	<style>
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			text-align: center;
+		}
+		.restaurant-image {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+			border: 5px solid #ddd;
+			box-sizing: border-box;
+		}
+		.img-wrapper {
+			margin: 20px 0;
+		}
+		.form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 20px 0;
+		}
+		.form select {
+			margin: 10px 0;
+		}
+		.btn {
+			padding: 10px 20px;
+			background-color: #3498db;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		.form button:hover {
+			background-color: #2980b9;
+		}
+	</style>
+</head>
+<body>
+    <div class="container">
+        <div class="img-wrapper">
+            {% if objekat.getSlikaStolova %}
+                <img src="{% static objekat.getSlikaStolova %}" class="restaurant-image">
+            {% endif %}
+        </div>
+        <br>
+        <br>
+        <br>
+        <form class="form" action="{% url 'choseTable' datumPocetka|date:'Y-m-d' vremePocetka|time:'H:i' datumKraja|date:'Y-m-d' vremeKraja|time:'H:i' %}" method="POST">
+            {% csrf_token %}
+              <select id="stolovi" name="stolovi">
+                  {% for s in slobodniStolovi %}
+                      <option value="{{ s.idsto }}">{{ s.idsto }} - {% if s.dohvTip %} {{ s.dohvTip }} {% endif %}</option>
+                  {% endfor %}
+              </select>
+              <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

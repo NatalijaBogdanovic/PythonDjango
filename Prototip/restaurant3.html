@@ -1,0 +1,113 @@
+<!--Autor: Marija Aleksic 2020/0538-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Name - Description</title>
+  <style>
+    /* CSS styles for the page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .restaurant-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border: 5px solid #ddd;
+      box-sizing: border-box;
+    }
+    .restaurant-name {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .restaurant-description {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .rating input[type="radio"] {
+      display: none;
+    }
+    .rating input[type="radio"] + label {
+      font-size: 24px;
+      color: #ddd;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .rating input[type="radio"]:checked + label {
+      color: gold;
+    }
+    .average-rating {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .button {
+      background-color: purple;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: purple;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="restaurant-image" src="Insolita2.jpg" alt="Restaurant Image">
+    <h1 class="restaurant-name">Insolita</h1>
+    <p class="restaurant-description">Insolita je upravo omaz lucidnosti i domisljatosti italijanske kuhinje. Istovremeno tradicionalna i uvek spremna za novo, nesvakidasnje, neuobicajeno i van utabanog puta. Spremna da bude mlada kad krenete u grad, kao i da pokaze svoje anticke korene u bakinom receptu.
+      Insolita uzima sve te ideje od Kalabrije do Frijulija, od Toskane do Sicilije, od jelovnika u zabacenim ulicicama Palerma ili Napulja do bezbroj varijacija tih istih jela na putu za Torino ili Udine.
+      Rastavlja ih i ponovo sastavlja, trazeci savrsen odnos punoce, teksture i boje, kvaliteta i zdravlja, inspiracije i gastronomskog dozivljaja.</p>
+      <h1 class="restaurant-menu">Menu</h1>
+      <img class="restaurant-image" src="menu.png" alt="Restaurant Image">
+      <div class="rating">
+      <input type="radio" name="rating" id="rating-1" value="1">
+      <label for="rating-1">&#9733;</label>
+      <input type="radio" name="rating" id="rating-2" value="2">
+      <label for="rating-2">&#9733;</label>
+      <input type="radio" name="rating" id="rating-3" value="3">
+      <label for="rating-3">&#9733;</label>
+        <input type="radio" name="rating" id="rating-4" value="4">
+        <label for="rating-4">&#9733;</label>
+        <input type="radio" name="rating" id="rating-5" value="5">
+        <label for="rating-5">&#9733;</label>
+        <span class="average-rating">(Average Rating: 4.5)</span>
+        </div>
+        <div class="buttons">
+        <a class="button" href="reserveTable.html">Reserve a table</a>
+        <a class="button" href="reservePlace.html">Reserve the whole place</a>
+        <button class="button">Add to favorites</button>
+        </div>
+          </div>
+        </body>
+        </html>

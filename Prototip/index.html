@@ -1,0 +1,100 @@
+<!-- Autor: Marija Aleksic 2020/0538-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to TableMate!</title>
+    <style>
+        /* Add a gradient background */
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #006699, #33ccff);
+            color: white;
+        }
+        /* Style the logo */
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 350px;
+            filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.4));
+            margin-bottom: 30px;
+        }
+        /* Center the header text */
+        h1, p {
+            text-align: center;
+        }
+        /* Style the buttons */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+        }
+        .button {
+            position: relative;
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #333;
+            background-color: #fff;
+            border-radius: 50px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            z-index: 1;
+        }
+        .button:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            opacity: 0.4;
+            z-index: -1;
+            transition: all 0.3s ease-in-out;
+        }
+        .button:hover:before {
+            transform: translate(-50%, -50%) scale(3);
+            width: 200%;
+            height: 200%;
+        }
+    </style>
+  </head>
+  <body>
+    <img src="myLogo.png" alt="TableMate" class="logo">
+    <h1>Welcome to TableMate!</h1>
+    <p>Sign in or sign up to learn more and reserve your seat!</p>
+    <div class="button-container">
+      <a class="button" href="login.html">Sign in</a>
+      <a class="button" href="signup.html">Sign up</a>
+      <a class="button" href="explore.html">Continue as a guest</a>
+    </div>
+    <script>
+        // Add a ripple effect to the buttons on click
+        let buttons = document.querySelectorAll('.button');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                let ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                let x = e.clientX - e.target.offsetLeft;
+                let y = e.clientY - e.target.offsetTop;
+                ripple.style.left = `${x}px`;
+                ripple.style.top = `${y}px`;
+                setTimeout(() => {
+                    ripple.remove();
+                }, 1000);
+            });
+        });
+    </script>
+  </body>
+</html>

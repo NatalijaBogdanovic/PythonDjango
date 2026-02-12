@@ -1,0 +1,77 @@
+<!--Autor: Marija Aleksic 2020/0538, Pavle Perovic 2014/0594-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+            h1 {
+        color: #333;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    h4 {
+        text-align: center;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+
+    p {
+        color: #666;
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+        margin: 30px 50px;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 50%;
+        height: auto;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        align-self: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #666;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-5">Vesti</h1>
+       {% for vest in vesti reversed %}
+            <div class="card mb-5">
+                {% if vest.getMojaSlika %}
+                    <img class="card-img-top" src="{% static vest.getMojaSlika %}" alt="{{ vest.naslov }}">
+                {% endif %}
+                <div class="card-body">
+                    <h4 class="card-title">{{ vest.naslov }}</h4>
+                    <p class="card-text">{{ vest.tekst }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>

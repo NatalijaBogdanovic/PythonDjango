@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+<<<<<<< PATCH SET (376969 Rename - ovanje fajla kako bi ostali mogli da pulluju.)
+    <list default="true" id="97fc52a8-7c0e-432d-90bd-b6e31ebcd138" name="Changes" comment="" />
+=======
+    <list default="true" id="97fc52a8-7c0e-432d-90bd-b6e31ebcd138" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< PATCH SET (b54c50 Dodato jos malo stvari u bazi pred odbranu, usled testiranja)
+      <change beforePath="$PROJECT_DIR$/Stolari/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Stolari/views.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Stolari/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Stolari/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/faza5Impl/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/faza5Impl/settings.py" afterDir="false" />
+>>>>>>> BASE      (f5a850 Dodati Django testovi i izmenjena skripta sa dodatnim korisn)
+    </list>
+>>>>>>> BASE      (571226 Dodato jos malo stvari u bazi pred odbranu, usled testiranja)
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2Qd0xyXeMvZQqWupD2F9OA4lWTu" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+<<<<<<< PATCH SET (b54c50 Dodato jos malo stvari u bazi pred odbranu, usled testiranja)
+    &quot;last_opened_file_path&quot;: &quot;/Users/marijaaleksic/workspace/GERRIT2/project_Stolari/faza5Impl/Stolari&quot;,
+=======
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/NATALIJA/OneDrive/Desktop/gerrit/project_Stolari/faza5Impl&quot;,
+>>>>>>> BASE      (f5a850 Dodati Django testovi i izmenjena skripta sa dodatnim korisn)
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\NATALIJA\OneDrive\Desktop\gerrit\project_Stolari\faza5Impl\static\slike" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="faza5Impl" type="Python.DjangoServer" factoryName="Django server">
+      <module name="faza5Impl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="faza5Impl.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="97fc52a8-7c0e-432d-90bd-b6e31ebcd138" name="Changes" comment="" />
+      <created>1685668401967</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1685668401967</updated>
+      <workItem from="1685668449526" duration="44597000" />
+      <workItem from="1685798288299" duration="7704000" />
+      <workItem from="1685830432164" duration="1151000" />
+      <workItem from="1685890783362" duration="2084000" />
+      <workItem from="1685910820018" duration="2042000" />
+      <workItem from="1687003914990" duration="3867000" />
+      <workItem from="1687040687383" duration="4648000" />
+      <workItem from="1687054608257" duration="2741000" />
+      <workItem from="1687121423980" duration="3565000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

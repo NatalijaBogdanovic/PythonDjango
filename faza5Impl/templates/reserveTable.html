@@ -1,0 +1,83 @@
+<!--Natalija Bogdanovic-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Page</title>
+	<style>
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			text-align: center;
+		}
+		.restaurant-image {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+			border: 5px solid #ddd;
+			box-sizing: border-box;
+		}
+		.img-wrapper {
+			margin: 20px 0;
+		}
+		.form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 20px auto;
+			max-width: 400px;
+		}
+		.form label {
+			margin-top: 10px;
+			display: block;
+			text-align: left;
+		}
+		.form input, .form select {
+			margin-top: 5px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+			width: 100%;
+			box-sizing: border-box;
+		}
+		.form button {
+			margin-top: 10px;
+			padding: 10px 20px;
+			background-color: #3498db;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		.form button:hover {
+			background-color: #2980b9;
+		}
+	</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Popunite podatke za rezervaciju</h1>
+        <form class="form" action="{% url 'raspoloziviStolovi' objekat.idobj %}" method="POST">
+            {% csrf_token %}
+            <label for="date">Select date of beginning:</label>
+            <input type="date" name="date1">
+            <br>
+            <label for="time">Select time of beginning:</label>
+            <input type="time" name="time1">
+            <br>
+            <label for="date">Select date of ending:</label>
+            <input type="date" name="date2">
+            <br>
+            <label for="time">Select time of ending:</label>
+            <input type="time" name="time2">
+            <br>
+            <button type="submit" class="button">View free tables</button>
+            {% if error %}
+                <font color="red">{{ error }}</font>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!--Autor: Marija Aleksic 2020/0538, Pavle Perovic 2014/0594-->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Administrator</title>
+	<style>
+      body {
+        background-image: url("{% static 'slike/AdobeStock_152133987.jpeg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 48px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px #000000;
+        margin-bottom: 50px;
+      }
+
+      button {
+        font-size: 20px;
+        font-weight: thin;
+        color: white;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button.explore {
+        background-color: transparent;
+        color: white;
+        width: 740px;
+      }
+
+      button.news {
+        background-color: transparent;
+        color: white;
+        width: 200px;
+      }
+
+      button.favorites {
+        background-color: #408aeb;
+        color: white;
+        width: 200px;
+      }
+
+      button.logout {
+        background-color: transparent;
+        color: white;
+        width: 740px;
+      }
+
+      button:hover {
+        background-color: white;
+        color: #408aeb;
+      }
+    </style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="title">Menadzer Dashboard</h1>
+		<div class="button-group">
+			<a href="{% url 'pregledRezervacijaIIznajmljivanja' %}"><button class="explore">Pregled rezervacija</button></a>
+			<form action="{% url 'logout' %}" method="post">
+				{% csrf_token %}
+				<button type="submit" class="logout">Logout</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

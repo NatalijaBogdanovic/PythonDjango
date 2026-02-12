@@ -1,0 +1,115 @@
+<!--Autor: Marija Aleksic 2020/0538-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="container">
+		<div class="logo">
+			<img src="myLogo.png" alt="Logo">
+		</div>
+		<h2 class="title">Sign Up</h2>
+		<form action="user.html">
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password">
+            </div>
+            <div class="form-group">
+              <label for="firstName">First Name:</label>
+              <input type="text" id="firstName" name="firstName">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name:</label>
+              <input type="text" id="lastName" name="lastName">
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+              <label for="number">Number:</label>
+              <input type="tel" id="number" name="number">
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+          </form>
+	</div>
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+
+		.container {
+			margin: 0 auto;
+			max-width: 500px;
+			padding: 50px 20px;
+			text-align: left;
+		}
+
+		.logo {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 20px;
+		}
+
+		.logo img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.title {
+			font-size: 30px;
+			font-weight: normal;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		form {
+			background-color: #FFFFFF;
+			border-radius: 4px;
+			box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+			padding: 20px;
+		}
+
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		label {
+			display: block;
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		input {
+			border: 1px solid #CCCCCC;
+			border-radius: 4px;
+			box-sizing: border-box;
+			padding: 10px;
+			width: 100%;
+		}
+
+		.btn {
+			padding: 10px 20px;
+        border-radius: 20px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        margin-top: 10px;
+        border: none;
+        cursor: pointer;
+		display: flex;
+	justify-content: center;
+		}
